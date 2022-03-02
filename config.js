@@ -10,5 +10,9 @@ module.exports = {
                 underscored: true
             }
         }
+    },
+    jwt: {
+        secret: 'Nta$k-AP1',
+        options: { session: false }
     }
 }
