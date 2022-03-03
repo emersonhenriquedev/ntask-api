@@ -1,18 +1,2 @@
-module.exports = {
-    db: {
-        database: "ntask",
-        username: "",
-        password: "",
-        params: {
-            dialect: "sqlite",
-            storage: "ntask.sqlite",
-            define: {
-                underscored: true
-            }
-        }
-    },
-    jwt: {
-        secret: 'Nta$k-AP1',
-        options: { session: false }
-    }
-}
+const env = process.env.NODE_ENV || 'development';
+module.exports = require(`./config/${env}.js`);

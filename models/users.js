@@ -24,7 +24,7 @@ module.exports = app => {
             set(value) {
                 const salt = bcrypt.genSaltSync();
                 const password = bcrypt.hashSync(value, salt);
-                this.setDataValue('passwor', password);
+                this.setDataValue('password', password);
             }
         },
         email: {

@@ -42,11 +42,11 @@ module.exports = app => {
             try {
                 const { id } = req.params;
                 const where = { id, userId: req.user.id };
-                req.body.userId = req.user.id
+                req.body.userId = req.user.id;
                 await Tasks.update(req.body, { where });
                 res.sendStatus(204);
             } catch (err) {
-                res.status(412).json({ msg: err });
+                res.status(412).json({ msg: err.message });
             }
         })
         .delete(async (req, res) => {
@@ -56,7 +56,7 @@ module.exports = app => {
                 await Tasks.destroy({ where });
                 res.sendStatus(204);
             } catch (err) {
-                res.status(412).json({ msg: err });
+                res.status(412).json({ msg: err.message });
             }
         });
 }

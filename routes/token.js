@@ -8,7 +8,7 @@ module.exports = app => {
 
     app.post('/token', async (req, res) => {
         try {
-            const { email, password } = req.params;
+            const { email, password } = req.body;
             if (email && password) {
                 const where = { email };
                 const user = await Users.findOne({ where });
